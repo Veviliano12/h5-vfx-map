@@ -49,3 +49,17 @@ a.pane-btn{text-decoration:none;color:inherit;display:inline-block}
   line-height: 1.45;
   color: #6b7280;
 }
+
+#btn-export-notes{
+  border:1px solid #111;
+  background:#111;
+  color:#fff;
+  border-radius:8px;
+  padding:6px 12px;
+  font-size:13px;
+  font-weight:600;
+  cursor:pointer;
+  white-space:nowrap;
+}
+#btn-export-notes:hover{opacity:.88}
+#btn-export-notes:active{transform:translateY(1px)}
