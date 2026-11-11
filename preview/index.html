@@ -7,6 +7,7 @@
   <title>待吸收预览 · 尚未并入 53 例全景地图</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="../shared/annotate.css">
+<script src="../shared/export-notes.js?v=20261111e"></script>
 </head>
 <body class="preview-page">
   <div class="live-shell">
@@ -19,7 +20,7 @@
           <label for="anno-name">署名</label>
           <input id="anno-name" type="text" maxlength="40" placeholder="你的名字" autocomplete="nickname">
           <span class="live-sync" id="anno-sync"></span>
-          <button type="button" id="btn-export-notes">导出批注</button>
+          <button type="button" id="btn-export-notes" onclick="if(window.exportH5VfxNotes){exportH5VfxNotes();}return false;">导出批注</button>
         </div>
       </div>
     </div>
@@ -72,7 +73,7 @@
 
   <script src="data/cases.js"></script>
   <script src="../shared/config.js"></script>
-  <script src="../shared/annotate.js"></script>
+  <script src="../shared/annotate.js?v=20261111e"></script>
   <script src="app.js"></script>
 </body>
 </html>

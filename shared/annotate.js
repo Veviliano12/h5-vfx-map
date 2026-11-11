@@ -240,27 +240,8 @@
 
   function exportNotes() {
     loadLocal();
-    var data = snapshot();
-    data.annotatorName = getName();
-    data.exportedAt = now();
-    var n = 0;
-    Object.keys(data.items || {}).forEach(function (id) {
-      var it = data.items[id] || {};
-      if ((it.marks && Object.keys(it.marks).length) || (it.notes && it.notes.length)) n += 1;
-    });
-    if (!n) {
-      setSync("这台浏览器里还没有批注可导出", "err");
-      return;
-    }
-    var blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
-    var a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "H5视效批注.json";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1500);
-    setSync("已下载，把这个文件发给我就行", "ok");
+    saveLocal();
+    if (global.exportH5VfxNotes) global.exportH5VfxNotes();
   }
 
   function ensureExportButton() {
@@ -274,10 +255,7 @@
       btn.textContent = "导出批注";
       host.appendChild(btn);
     }
-    if (!btn.getAttribute("data-bound")) {
-      btn.setAttribute("data-bound", "1");
-      btn.addEventListener("click", exportNotes);
-    }
+    // Click is handled by the button's onclick="exportH5VfxNotes()".
   }
 
   function mountHeader() {
