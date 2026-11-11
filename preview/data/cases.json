@@ -1,30 +1,24 @@
 {
   "title": "待吸收预览",
-  "asOf": "2026-11-11 21:53",
-  "timezone": "Asia/Shanghai",
-  "timezoneNote": "Asia/Shanghai（UTC+8）；21:53 已把 Aura 重拍新确认的 3 条写入预览",
+  "asOf": "2026-11-11 11:40",
+  "timezone": "America/New_York",
+  "timezoneNote": "America/New_York（UTC-5）；对应 2026-11-12 00:40 Asia/Shanghai。已按陈雨在待吸收预览中的标记，把 71 条「合适」并入全景地图。",
   "model": "DeepSeek Flash",
   "modelNote": "归类模型为 DeepSeek Flash，均经截图人工确认。",
-  "mapCaseCount": 53,
-  "confirmedCount": 112,
-  "heldCount": 8,
+  "mapCaseCount": 124,
+  "confirmedCount": 30,
+  "heldCount": 0,
   "countsByGroup": {
-    "Aura.build": 17,
-    "动效库": 31,
-    "视效组件库": 61,
-    "官方增量": 1,
-    "基础设施": 2
+    "Aura.build": 1,
+    "动效库": 9,
+    "视效组件库": 20
   },
   "countsByLanguage": {
-    "液态玻璃与光学": 17,
-    "流体与着色器场": 22,
-    "光与发光": 10,
-    "粒子与点云": 3,
-    "图像与视频后期": 17,
+    "液态玻璃与光学": 6,
+    "流体与着色器场": 9,
     "生成艺术与程序化图形": 13,
-    "实时 3D · 写实材质与物件": 22,
-    "实时 3D · 场景与世界": 6,
-    "物理与软体模拟": 2
+    "实时 3D · 写实材质与物件": 1,
+    "实时 3D · 场景与世界": 1
   },
   "languageOrder": [
     "液态玻璃与光学",
@@ -45,117 +39,14 @@
     "基础设施"
   ],
   "notes": {
-    "notMerged": "这些是建议吸收，尚未并入现在那张 53 例全景地图。本预览未写入任何共享地图文件。",
+    "notMerged": "这些是尚未并入地图的建议吸收。陈雨已审本页一批：71 条合适已并入全景地图（现 124 例），标为不合适的已从本预览拿下，只标了「看过了」或尚未标记的仍留在本页。",
     "harmony": "官方增量里另有鸿蒙 3 条是对齐已在全景地图里的案例，不作为新的待吸收条目。",
     "photon": "Photon Beam 已改为不吸收：更像常见科技粒子/光束演示，不再放在先按下分区，也不计入建议吸收。",
     "dedupe": "同一视效不双收：Cue Kit 与官网 ?c= 已约定只保留已确认的那一侧。",
-    "rescreen": "2026-11-11 用户否定官方引擎演示后，已从主列表拿掉 19 条没有页面信息的场景图；另有 8 条拿不准仍先按下，不计入主列表。21:50 写入动效库新确认 9 条；21:53 又写入 Aura 重拍新确认 3 条（INFLATE、AURA — The Living Sanctuary、KVELD），主列表现为 112 条。Photon Beam 已改为不吸收。现有 53 例全景地图仍未改。"
+    "rescreen": "2026-11-11 用户否定官方引擎演示后，已从主列表拿掉 19 条没有页面信息的场景图；另有 8 条拿不准仍先按下，不计入主列表。21:50 写入动效库新确认 9 条；21:53 又写入 Aura 重拍新确认 3 条（INFLATE、AURA — The Living Sanctuary、KVELD），主列表现为 112 条。Photon Beam 已改为不吸收。现有 53 例全景地图仍未改。",
+    "garyReview": "2026-11-11 陈雨批注：合适 71（已并入地图），不合适 19（含此前 8 条先按下项，以及 Caustics），只看过未下结论 16。不合适的不再作为建议吸收。"
   },
   "items": [
-    {
-      "id": "aura-amber-house",
-      "name": "Amber House",
-      "officialName": "",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://amber-house.aura.build/",
-      "language": "实时 3D · 场景与世界",
-      "scale": "整页",
-      "scenes": [
-        "互动体验与游戏"
-      ],
-      "reason": "不是单张插画卡片，而是一个可走进的微型室内世界，光影和空间布局统一，适合作为场景与世界的另一种尺度标杆。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-amber-house.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-aural-72",
-      "name": "AURAL",
-      "officialName": "AURAL Luxury Hardware 3D Template",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://aural-72.aura.build/",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "整页",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "皮革、金属和玻璃的写实材质与影棚布光到位，是可对照的高阶产品级 3D 物件视效，不是普通商品摄影。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-aural-72.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-aurelia-bug",
-      "name": "Aurelia",
-      "officialName": "Aurelia 3D Interactive Exhibition Template",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://aurelia-bug.aura.build/",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "整页",
-      "scenes": [
-        "教育与展览",
-        "落地页"
-      ],
-      "reason": "甲虫的金属、珐琅、宝石和薄翅材质都非常精细，光影统一，达到高阶写实物件标杆，也适合教育和展览场景。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-aurelia-bug.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-elytra-ladybug",
-      "name": "ELYTRA Ladybug",
-      "officialName": "",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://elytra-ladybug.aura.build/",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "整页",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "鎏金镂空、珐琅、宝石与半透明翅翼材质完整细腻，从待定改为建议吸收，达到写实物件标杆。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-elytra-ladybug.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-ink-landing-page-69",
-      "name": "INK Fluid Engine",
-      "officialName": "INK Fluid Engine Landing Page Template",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://ink-landing-page-69.aura.build/",
-      "language": "流体与着色器场",
-      "scale": "整页",
-      "scenes": [
-        "落地页",
-        "创作工具"
-      ],
-      "reason": "实时紫色墨水流体场结构与高光清楚，页面写明不是视频或循环，达到流体与着色器场标杆。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-ink-landing-page-69.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-kasane",
-      "name": "KASANE",
-      "officialName": "KASANE Action RPG Landing Page Template",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://kasane.aura.build/",
-      "language": "实时 3D · 场景与世界",
-      "scale": "整页",
-      "scenes": [
-        "互动体验与游戏"
-      ],
-      "reason": "可进入的雾中鸟居世界已经展开，材质、光雾和空间完整，不是海报上压字，达到场景与世界标杆。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-kasane.webp",
-      "thumbMissing": false
-    },
     {
       "id": "aura-kerrline-prism-48",
       "name": "Kerrline Prism",
@@ -171,182 +62,6 @@
       "reason": "水晶簇色散和体积高光清楚，是可对照的高阶光学材质，不是普通产品图。从待定改为建议吸收。",
       "kind": "confirmed",
       "thumb": "thumbs/aura-kerrline-prism-48.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-matrixpay-v4",
-      "name": "MatrixPay v4",
-      "officialName": "",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://matrixpay-v4.aura.build/",
-      "language": "光与发光",
-      "scale": "整页",
-      "scenes": [
-        "落地页",
-        "互动体验与游戏"
-      ],
-      "reason": "主体是有体积的发光体，而不是常见地球/宇宙科幻贴图；光的结构、网格纵深和进入仪式完整，达到光与发光标杆。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-matrixpay-v4.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-matter-immersive",
-      "name": "MATTER",
-      "officialName": "MATTER Kinetic 3D Experience Template",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://matter-immersive.aura.build/",
-      "language": "液态玻璃与光学",
-      "scale": "整页",
-      "scenes": [
-        "落地页",
-        "创作工具"
-      ],
-      "reason": "不是普通 CSS 毛玻璃：条带有厚度、折射和连续高光，是可对照的高阶光学材质视效。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-matter-immersive.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-ravine-a-world-65",
-      "name": "Ravine",
-      "officialName": "Ravine — A world within",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://ravine-a-world-65.aura.build/",
-      "language": "实时 3D · 场景与世界",
-      "scale": "整页",
-      "scenes": [
-        "互动体验与游戏",
-        "落地页"
-      ],
-      "reason": "不是一张风景插画，而是一个可进入的微型世界：玻璃、水体、雾气和植物材质统一，适合作为实时 3D 场景标杆。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-ravine-a-world-65.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-tale-52-17",
-      "name": "ÉTALE",
-      "officialName": "Luxury Yacht Landing Page Template",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://tale-52-17.aura.build/",
-      "language": "流体与着色器场",
-      "scale": "整页",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "不是普通 CSS 渐变：坡面有体积、高光和层层起伏，色彩场完整铺在整页上，达到流体与着色器场的好看标杆。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-tale-52-17.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-veloce-prive",
-      "name": "Veloce Privé",
-      "officialName": "Veloce Privé, a private car collection you walk through",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://veloce-prive.aura.build/",
-      "language": "实时 3D · 场景与世界",
-      "scale": "整页",
-      "scenes": [
-        "落地页",
-        "互动体验与游戏"
-      ],
-      "reason": "不只是一辆车的产品图，而是完整的私密展厅空间：墙面、门廊灯光、地面反射和景深都成立，适合作为实时 3D 场景标杆。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-veloce-prive.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-vow-atelier-diamond-ring",
-      "name": "Vow Atelier",
-      "officialName": "Vow Atelier — Diamond Ring Experience",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://vow-atelier-diamond-ring.aura.build/",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "整页",
-      "scenes": [
-        "落地页",
-        "店铺与购买"
-      ],
-      "reason": "钻石切面与贵金属的写实材质达到产品级高阶物件标杆，不是普通珠宝摄影或简易 3D 商品图。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-vow-atelier-diamond-ring.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-wallow-bath-body-63",
-      "name": "Wallow",
-      "officialName": "Wallow Wellness Landing Page Template",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://wallow-bath-body-63.aura.build/",
-      "language": "图像与视频后期",
-      "scale": "整页",
-      "scenes": [
-        "落地页",
-        "店铺与购买"
-      ],
-      "reason": "水下光影和色素扩散非常好看，适合作为流体视觉参考；截图无法确认是实时着色器还是预渲染/摄影，所以放在图像与视频后期，并标视觉参考。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-wallow-bath-body-63.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-inflate-event",
-      "name": "INFLATE",
-      "officialName": "INFLATE Immersive Celebration",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://inflate-event.aura.build/",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "整页",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "米色拱廊里金/白气球和巨大玻璃泡、地面倒影已展开，同时有导航和 PLAN A CELEBRATION，是完整庆典落地页，不是裸场景图。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-inflate-event.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-aura-living-sanctuary",
-      "name": "AURA — The Living Sanctuary",
-      "officialName": "AURA — The Living Sanctuary",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://aura-living-sanctuary.aura.build/",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "整页",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "俯视木桌、蓝图、铜钉、台灯、咖啡已清楚，并有导航、PRIVATE VIEWING、WALK THE HOUSE，是概念住宅落地页完整首屏。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-aura-living-sanctuary.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "aura-kveld-showroom",
-      "name": "KVELD",
-      "officialName": "KVELD: A 3D Showroom for Seven Guitars",
-      "sourceGroup": "Aura.build",
-      "sourceSite": "Aura.build",
-      "url": "https://kveld-showroom.aura.build/",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "整页",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "三把吉他分台陈列、中间 FLOE 有青色光环，并有标题、导航和 BOOK A VISIT，是完整 3D 展厅落地页。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aura-kveld-showroom.webp",
       "thumbMissing": false
     },
     {
@@ -384,57 +99,6 @@
       "thumbMissing": false
     },
     {
-      "id": "smoothui__docs-components-aurora-curtain",
-      "name": "Aurora Curtain",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "SmoothUI",
-      "url": "https://smoothui.dev/docs/components/aurora-curtain",
-      "language": "流体与着色器场",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "预览中极光帘幕有绿紫分层丝带和胶片颗粒，是可参考的着色器背景，不只是普通渐变。",
-      "kind": "confirmed",
-      "thumb": "thumbs/smoothui__docs-components-aurora-curtain.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "smoothui__docs-components-glass-card",
-      "name": "Glass Card",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "SmoothUI",
-      "url": "https://smoothui.dev/docs/components/glass-card",
-      "language": "液态玻璃与光学",
-      "scale": "组件",
-      "scenes": [
-        "界面"
-      ],
-      "reason": "卡片边缘把后景条纹明显折弯，内高光和折射清楚，不是普通毛玻璃。",
-      "kind": "confirmed",
-      "thumb": "thumbs/smoothui__docs-components-glass-card.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "kokonut-ui__docs-backgrounds-caustics-background",
-      "name": "Caustics Background",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Kokonut UI",
-      "url": "https://kokonutui.com/docs/backgrounds/caustics-background",
-      "language": "流体与着色器场",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "泳池地砖焦散完整、光影柔和，是可参考的光学着色器英雄区，不只是普通渐变。",
-      "kind": "confirmed",
-      "thumb": "thumbs/kokonut-ui__docs-backgrounds-caustics-background.webp",
-      "thumbMissing": false
-    },
-    {
       "id": "kokonut-ui__docs-backgrounds-dither-reveal-hero",
       "name": "Dither Reveal Hero",
       "officialName": "",
@@ -466,23 +130,6 @@
       "reason": "半调网点球体印刷感完整、黑白克制，是可参考的程序化图形，不只是普通点阵底。",
       "kind": "confirmed",
       "thumb": "thumbs/kokonut-ui__docs-backgrounds-halftone-background.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "kokonut-ui__docs-backgrounds-rain-glass-background",
-      "name": "Rain Glass Background",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Kokonut UI",
-      "url": "https://kokonutui.com/docs/backgrounds/rain-glass-background",
-      "language": "液态玻璃与光学",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "雨天窗玻璃上的水珠有透镜折射，后景湖山被雾化，光学完成度高。",
-      "kind": "confirmed",
-      "thumb": "thumbs/kokonut-ui__docs-backgrounds-rain-glass-background.webp",
       "thumbMissing": false
     },
     {
@@ -520,108 +167,6 @@
       "thumbMissing": false
     },
     {
-      "id": "scrolltide__templates-nebula",
-      "name": "Nebula",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Scrolltide",
-      "url": "https://www.scrolltide.co/templates/nebula",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "雾中悬浮树岛构成完整幻想场景，光影和空间完成度高，可作为视觉参考。",
-      "kind": "confirmed",
-      "thumb": "thumbs/scrolltide__templates-nebula.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "scrolltide__templates-aurora",
-      "name": "Aurora",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Scrolltide",
-      "url": "https://www.scrolltide.co/templates/aurora",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "体积云、发光金门与经典轿车组成完整电影感英雄区，完成度高，可作为视觉参考。",
-      "kind": "confirmed",
-      "thumb": "thumbs/scrolltide__templates-aurora.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "cue__components-phantom-infinite-gallery",
-      "name": "Phantom Infinite Gallery",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Cue / Cue Kit",
-      "url": "https://kit.cuedesign.space/components/phantom-infinite-gallery",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "暗格画廊中的点选影像有电影感与空间层次，可作为视觉参考。",
-      "kind": "confirmed",
-      "thumb": "thumbs/cue__components-phantom-infinite-gallery.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "cue__components-3d-book-carousel-reading-mode",
-      "name": "3D Book Carousel Reading Mode",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Cue / Cue Kit",
-      "url": "https://kit.cuedesign.space/components/3d-book-carousel-reading-mode",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "立体书架与封面展开完成度高，是可参考的物件级 3D，不只是普通轮播。",
-      "kind": "confirmed",
-      "thumb": "thumbs/cue__components-3d-book-carousel-reading-mode.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "cue__components-fisheye-chromatic-card-grid",
-      "name": "Fisheye Chromatic Card Grid",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Cue / Cue Kit",
-      "url": "https://kit.cuedesign.space/components/fisheye-chromatic-card-grid",
-      "language": "液态玻璃与光学",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "鱼眼膨胀和 RGB 色散在网格边缘很清楚，人像有电影感，是可参考的光学着色器图廊，不是普通卡片墙。官网 ?c=cue059 为同一视效，官网截图失败待重拍，本轮先吸收 Kit 页。",
-      "kind": "confirmed",
-      "thumb": "thumbs/cue__components-fisheye-chromatic-card-grid.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "cue__components-diagonal-field-journal-scroll",
-      "name": "Diagonal Field Journal Scroll",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Cue / Cue Kit",
-      "url": "https://kit.cuedesign.space/components/diagonal-field-journal-scroll",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "邮票、手写标注与虚线轨迹组成有完成度的田野手记画面，可作为视觉参考。",
-      "kind": "confirmed",
-      "thumb": "thumbs/cue__components-diagonal-field-journal-scroll.webp",
-      "thumbMissing": false
-    },
-    {
       "id": "cue__components-3d-envelope-stamp-collector",
       "name": "3D Envelope Stamp Collector",
       "officialName": "",
@@ -653,57 +198,6 @@
       "reason": "海报字绕成三维圆筒，构图完整，是可参考的字体空间装置，不是普通图廊。底部录屏条未挡住主画面。官网 ?c=cue030 为同一视效，官网裁切待重拍，本轮先吸收 Kit 页。",
       "kind": "confirmed",
       "thumb": "thumbs/cue__components-helix-ribbon-portfolio-scroll.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "cue__components-mosaic-tunnel-scroll-odyssey",
-      "name": "Mosaic Tunnel Scroll Odyssey",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Cue / Cue Kit",
-      "url": "https://kit.cuedesign.space/components/mosaic-tunnel-scroll-odyssey",
-      "language": "实时 3D · 场景与世界",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "用图片拼成的三维隧道透视强烈，有可参考的空间纵深。",
-      "kind": "confirmed",
-      "thumb": "thumbs/cue__components-mosaic-tunnel-scroll-odyssey.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "cue__components-paper-fold-showcase",
-      "name": "Paper Fold Showcase",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Cue / Cue Kit",
-      "url": "https://kit.cuedesign.space/components/paper-fold-showcase",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "展览海报式排版与肖像完成度高，可作为图像后期/视觉参考。",
-      "kind": "confirmed",
-      "thumb": "thumbs/cue__components-paper-fold-showcase.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "cue__home-c-cue015",
-      "name": "Prisma Cinematic Agency Hero",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Cue / Cue Kit",
-      "url": "https://www.cuedesign.space/?c=cue015",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "黄底剪影人像与大字排版组成完整电影感机构英雄区，可作为视觉参考。底部录屏条挡住一小块，但不影响对主画面的判断。",
-      "kind": "confirmed",
-      "thumb": "thumbs/cue__home-c-cue015.webp",
       "thumbMissing": false
     },
     {
@@ -741,91 +235,6 @@
       "thumbMissing": false
     },
     {
-      "id": "aceternity-ui-components-liquid-glass",
-      "name": "Liquid Glass",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Aceternity UI",
-      "url": "https://ui.aceternity.com/components/liquid-glass",
-      "language": "液态玻璃与光学",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "圆形玻璃面有折射、色散和磨砂边缘，光学细节清楚，不是普通毛玻璃。",
-      "kind": "confirmed",
-      "thumb": "thumbs/aceternity-ui-components-liquid-glass.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "inspira-ui-docs-en-components-backgrounds-liquid-background",
-      "name": "Liquid Background",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Inspira UI",
-      "url": "https://inspira-ui.com/docs/en/components/backgrounds/liquid-background",
-      "language": "流体与着色器场",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "虹彩流体褶皱和高光清楚，是好看的着色器背景。",
-      "kind": "confirmed",
-      "thumb": "thumbs/inspira-ui-docs-en-components-backgrounds-liquid-background.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "inspira-ui-docs-en-components-backgrounds-neural-background",
-      "name": "Neural Background",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Inspira UI",
-      "url": "https://inspira-ui.com/docs/en/components/backgrounds/neural-background",
-      "language": "流体与着色器场",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "深蓝发光的神经分支有体积和层次，不是常见粒子底。",
-      "kind": "confirmed",
-      "thumb": "thumbs/inspira-ui-docs-en-components-backgrounds-neural-background.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "inspira-ui-docs-en-components-backgrounds-singularity-background",
-      "name": "Singularity Background",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Inspira UI",
-      "url": "https://inspira-ui.com/docs/en/components/backgrounds/singularity-background",
-      "language": "光与发光",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "环状奇点有火与冷色光边，体积光清楚，好看。",
-      "kind": "confirmed",
-      "thumb": "thumbs/inspira-ui-docs-en-components-backgrounds-singularity-background.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "inspira-ui-docs-en-components-html-in-canvas-html-cloth",
-      "name": "HTML Cloth",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Inspira UI",
-      "url": "https://inspira-ui.com/docs/en/components/html-in-canvas/html-cloth",
-      "language": "物理与软体模拟",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "把整页 HTML 折成布料，褶皱和形变清楚，不是普通过渡。",
-      "kind": "confirmed",
-      "thumb": "thumbs/inspira-ui-docs-en-components-html-in-canvas-html-cloth.webp",
-      "thumbMissing": false
-    },
-    {
       "id": "inspira-ui-docs-en-components-special-effects-dither-shader",
       "name": "Dither Shader",
       "officialName": "",
@@ -840,23 +249,6 @@
       "reason": "彩色有序抖动人像完整，网点后期清楚。",
       "kind": "confirmed",
       "thumb": "thumbs/inspira-ui-docs-en-components-special-effects-dither-shader.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "inspira-ui-docs-en-components-visualization-liquid-logo",
-      "name": "Liquid Logo",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Inspira UI",
-      "url": "https://inspira-ui.com/docs/en/components/visualization/liquid-logo",
-      "language": "流体与着色器场",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "液态金属苹果标识有体积高光和边缘色散，材质清楚，不是平面描边。",
-      "kind": "confirmed",
-      "thumb": "thumbs/inspira-ui-docs-en-components-visualization-liquid-logo.webp",
       "thumbMissing": false
     },
     {
@@ -877,159 +269,6 @@
       "thumbMissing": false
     },
     {
-      "id": "react-bits-animations-elastic-mesh",
-      "name": "Elastic Mesh",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "React Bits",
-      "url": "https://reactbits.dev/animations/elastic-mesh",
-      "language": "物理与软体模拟",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "充气软体字有厚度、高光和弹性形变，材质清楚，不只是文字动效。",
-      "kind": "confirmed",
-      "thumb": "thumbs/react-bits-animations-elastic-mesh.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "react-bits-animations-electric-logo",
-      "name": "Electric Logo",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "React Bits",
-      "url": "https://reactbits.dev/animations/electric-logo",
-      "language": "光与发光",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "标识边缘有跳动电弧和辉光，线条干净，光感清楚。",
-      "kind": "confirmed",
-      "thumb": "thumbs/react-bits-animations-electric-logo.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "react-bits-animations-metallic-paint",
-      "name": "Metallic Paint",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "React Bits",
-      "url": "https://reactbits.dev/animations/metallic-paint",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "金属漆标识有高光和反射，材质写实，不是平面描边。",
-      "kind": "confirmed",
-      "thumb": "thumbs/react-bits-animations-metallic-paint.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "react-bits-animations-shape-blur",
-      "name": "Shape Blur",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "React Bits",
-      "url": "https://reactbits.dev/animations/shape-blur",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "标识被做成透镜般的失焦与拖影，光学后期清楚。",
-      "kind": "confirmed",
-      "thumb": "thumbs/react-bits-animations-shape-blur.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "react-bits-animations-strands",
-      "name": "Strands",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "React Bits",
-      "url": "https://reactbits.dev/animations/strands",
-      "language": "液态玻璃与光学",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "磨砂玻璃球体内有光谱光带，体积光和玻璃表面都清楚，好看。",
-      "kind": "confirmed",
-      "thumb": "thumbs/react-bits-animations-strands.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "react-bits-backgrounds-balatro",
-      "name": "Balatro",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "React Bits",
-      "url": "https://reactbits.dev/backgrounds/balatro",
-      "language": "流体与着色器场",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "油漆旋涡有笔触和层次，蓝黑与赭红绞在一起，是完整好看的流体着色器。",
-      "kind": "confirmed",
-      "thumb": "thumbs/react-bits-backgrounds-balatro.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "react-bits-backgrounds-beams",
-      "name": "Beams",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "React Bits",
-      "url": "https://reactbits.dev/backgrounds/beams",
-      "language": "光与发光",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "暗底上的高光缎带有厚度和反光，光带完整好看。",
-      "kind": "confirmed",
-      "thumb": "thumbs/react-bits-backgrounds-beams.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "react-bits-backgrounds-ferrofluid",
-      "name": "Ferrofluid",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "React Bits",
-      "url": "https://reactbits.dev/backgrounds/ferrofluid",
-      "language": "流体与着色器场",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "磁流体尖刺有高光和体积，材质清楚，不是普通粒子。",
-      "kind": "confirmed",
-      "thumb": "thumbs/react-bits-backgrounds-ferrofluid.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "react-bits-backgrounds-ghost-fibers",
-      "name": "Ghost Fibers",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "React Bits",
-      "url": "https://reactbits.dev/backgrounds/ghost-fibers",
-      "language": "粒子与点云",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "发光纤维粒子带有景深和层次，条带扭动好看。",
-      "kind": "confirmed",
-      "thumb": "thumbs/react-bits-backgrounds-ghost-fibers.webp",
-      "thumbMissing": false
-    },
-    {
       "id": "react-bits-backgrounds-iridescence",
       "name": "Iridescence",
       "officialName": "",
@@ -1044,40 +283,6 @@
       "reason": "虹彩流体褶皱细，高光和色彩过渡好看。",
       "kind": "confirmed",
       "thumb": "thumbs/react-bits-backgrounds-iridescence.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "react-bits-backgrounds-light-rays",
-      "name": "Light Rays",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "React Bits",
-      "url": "https://reactbits.dev/backgrounds/light-rays",
-      "language": "光与发光",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "体积光从一侧打下，有雾感和光源，光柱清楚。",
-      "kind": "confirmed",
-      "thumb": "thumbs/react-bits-backgrounds-light-rays.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "react-bits-backgrounds-lightning",
-      "name": "Lightning",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "React Bits",
-      "url": "https://reactbits.dev/backgrounds/lightning",
-      "language": "光与发光",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "闪电分支和辉光清楚，不是简单发光线。",
-      "kind": "confirmed",
-      "thumb": "thumbs/react-bits-backgrounds-lightning.webp",
       "thumbMissing": false
     },
     {
@@ -1149,23 +354,6 @@
       "thumbMissing": false
     },
     {
-      "id": "react-bits-backgrounds-side-rays",
-      "name": "Side Rays",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "React Bits",
-      "url": "https://reactbits.dev/backgrounds/side-rays",
-      "language": "光与发光",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "侧向体积光有纵深和散射，不是平面扫光。",
-      "kind": "confirmed",
-      "thumb": "thumbs/react-bits-backgrounds-side-rays.webp",
-      "thumbMissing": false
-    },
-    {
       "id": "react-bits-backgrounds-threads",
       "name": "Threads",
       "officialName": "",
@@ -1217,23 +405,6 @@
       "thumbMissing": false
     },
     {
-      "id": "react-bits-components-holo-card",
-      "name": "Holo Card",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "React Bits",
-      "url": "https://reactbits.dev/components/holo-card",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "收藏卡上的全息闪粉和箔面高光清楚，卡片本身的视效成立。",
-      "kind": "confirmed",
-      "thumb": "thumbs/react-bits-components-holo-card.webp",
-      "thumbMissing": false
-    },
-    {
       "id": "react-bits-tools-sound-lab",
       "name": "Sound Lab | Free Creative Tool by React Bits",
       "officialName": "",
@@ -1248,40 +419,6 @@
       "reason": "圆形视窗里的丝状声波有体积和高光，像一层液膜，不是普通音频条。",
       "kind": "confirmed",
       "thumb": "thumbs/react-bits-tools-sound-lab.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-afternoon-sunlight",
-      "name": "Afternoon Sunlight",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/afternoon-sunlight",
-      "language": "光与发光",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "窗影焦散和柔和日光斑清楚，还有轻微色散，是完整的光学光效。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-afternoon-sunlight.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-brass",
-      "name": "Brass",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/brass",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "黄铜环的高光、倒角和反射清楚，材质写实，不是平面描边。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-brass.webp",
       "thumbMissing": false
     },
     {
@@ -1302,74 +439,6 @@
       "thumbMissing": false
     },
     {
-      "id": "shaders-collection-chrome-logo",
-      "name": "Chrome Logo",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/chrome-logo",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "铬制光圈叶片有清晰反射和边缘高光，材质写实。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-chrome-logo.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-chrome-rings",
-      "name": "Chrome Rings",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/chrome-rings",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "交错铬带的反射和边缘暖光清楚，写实金属完整好看。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-chrome-rings.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-color-eclipse",
-      "name": "Color Eclipse",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/color-eclipse",
-      "language": "光与发光",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "日食边缘的彩色光环和棱镜色边清楚，光的层次完整，好看。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-color-eclipse.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-cracked-crystal",
-      "name": "Cracked Crystal",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/cracked-crystal",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "锁形标志里的水晶裂纹、内透光和切面清楚，不是平面描边发光。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-cracked-crystal.webp",
-      "thumbMissing": false
-    },
-    {
       "id": "shaders-collection-crystal-ball",
       "name": "Crystal Ball",
       "officialName": "",
@@ -1384,23 +453,6 @@
       "reason": "玻璃球体边缘有虹彩和体积高光，光学轮廓清楚。",
       "kind": "confirmed",
       "thumb": "thumbs/shaders-collection-crystal-ball.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-flowing-ribbon",
-      "name": "Flowing Ribbon",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/flowing-ribbon",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "扭转缎带有厚度、高光和交叠，像完整的三维材质物件。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-flowing-ribbon.webp",
       "thumbMissing": false
     },
     {
@@ -1421,74 +473,6 @@
       "thumbMissing": false
     },
     {
-      "id": "shaders-collection-fluid-displacement",
-      "name": "Fluid Displacement",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/fluid-displacement",
-      "language": "流体与着色器场",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "重拍后公开缩略图完整：日落城市场景被液体置换弯折，波纹和折射清楚，是好看的流体着色器。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-fluid-displacement.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-gemstone",
-      "name": "Gemstone",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/gemstone",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "六边形宝石结构的切面、内反射和体积都清楚，不是平面描边。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-gemstone.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-heated-shapes",
-      "name": "Heated Shapes",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/heated-shapes",
-      "language": "流体与着色器场",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "三维热边形体有体积和色散描边，不是平面色带。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-heated-shapes.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-holographic-waves",
-      "name": "Holographic Waves",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/holographic-waves",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "全息箔面的细密干涉条纹和彩虹色散清楚，不是普通渐变。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-holographic-waves.webp",
-      "thumbMissing": false
-    },
-    {
       "id": "shaders-collection-magnified-pixels",
       "name": "Magnified Pixels",
       "officialName": "",
@@ -1503,40 +487,6 @@
       "reason": "字形被放大成 RGB 子像素阵列，色散和网格层次清楚，不是普通像素化。",
       "kind": "confirmed",
       "thumb": "thumbs/shaders-collection-magnified-pixels.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-mercury",
-      "name": "Mercury",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/mercury",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "水银/液态金属在字母里流动，高光和反射清楚，材质成立。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-mercury.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-neutral-folds",
-      "name": "Neutral Folds",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/neutral-folds",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "中性绸面褶皱有高光和轻微珠光，布料层次清楚，不是薄薄的缎面波。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-neutral-folds.webp",
       "thumbMissing": false
     },
     {
@@ -1591,57 +541,6 @@
       "thumbMissing": false
     },
     {
-      "id": "shaders-collection-prism-shards",
-      "name": "Prism Shards",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/prism-shards",
-      "language": "光与发光",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "棱镜碎裂的光谱光柱和色散清楚，不是普通放射模糊。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-prism-shards.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-resolving-chrome",
-      "name": "Resolving Chrome",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/resolving-chrome",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "层层铬环的高光和反射清楚，金属体积成立，不是平面渐变。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-resolving-chrome.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-royal-purple",
-      "name": "Royal Purple",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/royal-purple",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "紫色宝石切面和反射清楚，体积和高光成立。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-royal-purple.webp",
-      "thumbMissing": false
-    },
-    {
       "id": "shaders-collection-saturn",
       "name": "Saturn",
       "officialName": "",
@@ -1657,458 +556,29 @@
       "kind": "confirmed",
       "thumb": "thumbs/shaders-collection-saturn.webp",
       "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-scanner-noise",
-      "name": "Scanner Noise",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/scanner-noise",
-      "language": "粒子与点云",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "彩色点云地形有起伏和纵深，不是稀疏科技粒子。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-scanner-noise.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-silk-curtain",
-      "name": "Silk Curtain",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/silk-curtain",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "彩色绸帘有清楚褶皱和高光，布料成立。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-silk-curtain.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-stainless-steel",
-      "name": "Stainless Steel",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/stainless-steel",
-      "language": "实时 3D · 写实材质与物件",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "不锈钢链条环高光和倒角清楚，材质写实。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-stainless-steel.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-studio-glass",
-      "name": "Studio Glass",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/studio-glass",
-      "language": "液态玻璃与光学",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "像素外星人体由半透明玻璃块组成，体积和透光清楚，不是平面像素画。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-studio-glass.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-swirled-lenses",
-      "name": "Swirled Lenses",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/swirled-lenses",
-      "language": "液态玻璃与光学",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "波状楞镜表面高光连贯，像透镜或玻璃瓦楞，光学结构清楚。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-swirled-lenses.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "shaders-collection-traced-paths",
-      "name": "Traced Paths",
-      "officialName": "",
-      "sourceGroup": "视效组件库",
-      "sourceSite": "Shaders",
-      "url": "https://shaders.com/collection/traced-paths",
-      "language": "粒子与点云",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "粒子被拉成纤维轨迹，有疏密和方向，不是稀疏点阵。",
-      "kind": "confirmed",
-      "thumb": "thumbs/shaders-collection-traced-paths.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "apple-design-hub",
-      "name": "Apple Design 总入口",
-      "officialName": "",
-      "sourceGroup": "官方增量",
-      "sourceSite": "Apple Design",
-      "url": "https://developer.apple.com/design/",
-      "language": "液态玻璃与光学",
-      "scale": "整页",
-      "scenes": [
-        "教育与展览"
-      ],
-      "reason": "Apple Design 总入口主视觉把液态玻璃控件（折射、厚度、高光、彩条穿过玻璃环）完整摆出来，比 HIG Materials 文档页和 Newsroom 海报更能看见材质。首屏 canvases=0、videos=0，主视觉很可能是预渲染，和已收的苹果产品页类似。",
-      "kind": "confirmed",
-      "thumb": "thumbs/apple-design-hub.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "r3f-examples__caustics",
-      "name": "Caustics",
-      "officialName": "",
-      "sourceGroup": "基础设施",
-      "sourceSite": "React Three Fiber",
-      "url": "https://pmndrs.github.io/examples/caustics",
-      "language": "液态玻璃与光学",
-      "scale": "整页",
-      "scenes": [
-        "教育与展览"
-      ],
-      "reason": "写实玻璃杯把焦散和折射打在桌面与吸管上，软阴影完整，不是普通毛玻璃。",
-      "kind": "confirmed",
-      "thumb": "thumbs/r3f-examples__caustics.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "r3f-examples__scrollcontrols-and-lens-refraction",
-      "name": "Scrollcontrols And Lens Refraction",
-      "officialName": "",
-      "sourceGroup": "基础设施",
-      "sourceSite": "React Three Fiber",
-      "url": "https://pmndrs.github.io/examples/scrollcontrols-and-lens-refraction",
-      "language": "液态玻璃与光学",
-      "scale": "整页",
-      "scenes": [
-        "教育与展览"
-      ],
-      "reason": "圆形透镜盖在室内排版上，边缘有色散，折射把后面的灯和字母弯折，光学清楚。",
-      "kind": "confirmed",
-      "thumb": "thumbs/r3f-examples__scrollcontrols-and-lens-refraction.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "lightswind-ui__components-satin-flow",
-      "name": "Satin Flow",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Lightswind UI",
-      "url": "https://lightswind.com/components/satin-flow",
-      "language": "流体与着色器场",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "紫缎褶皱的高光和布褶结构清楚，是可参考的织物着色器背景，不只是普通流体渐变。",
-      "kind": "confirmed",
-      "thumb": "thumbs/lightswind-ui__components-satin-flow.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "lightswind-ui__components-volumetric-fractal",
-      "name": "Volumetric Fractal",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Lightswind UI",
-      "url": "https://lightswind.com/components/volumetric-fractal",
-      "language": "流体与着色器场",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "虹彩体积场的褶皱高光和纵深清楚，是可参考的光线步进着色器背景，不只是普通渐变。",
-      "kind": "confirmed",
-      "thumb": "thumbs/lightswind-ui__components-volumetric-fractal.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "scrolltide__templates-aperture",
-      "name": "Aperture",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Scrolltide",
-      "url": "https://www.scrolltide.co/templates/aperture",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "银幕方阵绕成隧道包围人影，构图完整，是可参考的媒体沉浸英雄区，不只是普通照片主视觉。",
-      "kind": "confirmed",
-      "thumb": "thumbs/scrolltide__templates-aperture.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "scrolltide__templates-aether",
-      "name": "Aether",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Scrolltide",
-      "url": "https://www.scrolltide.co/templates/aether",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "极光铺成上山之路，人影与光带构图完整，是可参考的电影感英雄区，不只是普通风景照。",
-      "kind": "confirmed",
-      "thumb": "thumbs/scrolltide__templates-aether.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "scrolltide__templates-oasis",
-      "name": "Oasis",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Scrolltide",
-      "url": "https://www.scrolltide.co/templates/oasis",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "螺旋云海铺满视野，空间纵深清楚，是可参考的电影感英雄区，不只是普通风景照。",
-      "kind": "confirmed",
-      "thumb": "thumbs/scrolltide__templates-oasis.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "scrolltide__templates-prairie",
-      "name": "Prairie",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Scrolltide",
-      "url": "https://www.scrolltide.co/templates/prairie",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "涡旋云穹罩住地平线，构图完整，是可参考的电影感英雄区，不只是普通风景照。",
-      "kind": "confirmed",
-      "thumb": "thumbs/scrolltide__templates-prairie.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "scrolltide__templates-glacier",
-      "name": "Glacier",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Scrolltide",
-      "url": "https://www.scrolltide.co/templates/glacier",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "金云与白鸽环绕标题，展览海报构图完整，是可参考的电影感英雄区。",
-      "kind": "confirmed",
-      "thumb": "thumbs/scrolltide__templates-glacier.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "scrolltide__templates-dune",
-      "name": "Dune",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Scrolltide",
-      "url": "https://www.scrolltide.co/templates/dune",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "雾中岩柱与夕阳光柱构成完整电影感英雄区，空间和体积光清楚，不只是普通风景照。",
-      "kind": "confirmed",
-      "thumb": "thumbs/scrolltide__templates-dune.webp",
-      "thumbMissing": false
-    },
-    {
-      "id": "scrolltide__templates-flying-garden",
-      "name": "Flying Garden",
-      "officialName": "",
-      "sourceGroup": "动效库",
-      "sourceSite": "Scrolltide",
-      "url": "https://www.scrolltide.co/templates/flying-garden",
-      "language": "图像与视频后期",
-      "scale": "组件",
-      "scenes": [
-        "落地页"
-      ],
-      "reason": "人在林中光柱里向上飞起，体积光和构图完整，是可参考的电影感英雄区，不只是普通风景照。",
-      "kind": "confirmed",
-      "thumb": "thumbs/scrolltide__templates-flying-garden.webp",
-      "thumbMissing": false
     }
   ],
-  "held": [
-    {
-      "id": "r3f-examples__aquarium",
-      "name": "Aquarium",
-      "officialName": "",
-      "sourceGroup": "基础设施",
-      "sourceSite": "React Three Fiber",
-      "url": "https://pmndrs.github.io/examples/aquarium",
-      "language": "液态玻璃与光学",
-      "scale": "整页",
-      "scenes": [
-        "教育与展览"
-      ],
-      "reason": "构图完整，但几乎没有排版和页面信息，更像一张静物关键视觉。",
-      "kind": "held",
-      "thumb": "thumbs/r3f-examples__aquarium.webp",
-      "thumbMissing": false,
-      "heldNote": "尺度收紧后先按下，想听你判断。不计入已确认的 100 条。"
-    },
-    {
-      "id": "r3f-examples__inter-epoxy-resin",
-      "name": "Inter Epoxy Resin",
-      "officialName": "",
-      "sourceGroup": "基础设施",
-      "sourceSite": "React Three Fiber",
-      "url": "https://pmndrs.github.io/examples/inter-epoxy-resin",
-      "language": "液态玻璃与光学",
-      "scale": "整页",
-      "scenes": [
-        "教育与展览"
-      ],
-      "reason": "是立体字，有一点文字内容，但仍偏演示。",
-      "kind": "held",
-      "thumb": "thumbs/r3f-examples__inter-epoxy-resin.webp",
-      "thumbMissing": false,
-      "heldNote": "尺度收紧后先按下，想听你判断。不计入已确认的 100 条。"
-    },
-    {
-      "id": "r3f-examples__portal-shapes",
-      "name": "Portal Shapes",
-      "officialName": "",
-      "sourceGroup": "基础设施",
-      "sourceSite": "React Three Fiber",
-      "url": "https://pmndrs.github.io/examples/portal-shapes",
-      "language": "液态玻璃与光学",
-      "scale": "整页",
-      "scenes": [
-        "教育与展览"
-      ],
-      "reason": "玻璃字母有设计感，但画面很空。",
-      "kind": "held",
-      "thumb": "thumbs/r3f-examples__portal-shapes.webp",
-      "thumbMissing": false,
-      "heldNote": "尺度收紧后先按下，想听你判断。不计入已确认的 100 条。"
-    },
-    {
-      "id": "r3f-examples__spline-glass-shapes",
-      "name": "Spline Glass Shapes",
-      "officialName": "",
-      "sourceGroup": "基础设施",
-      "sourceSite": "React Three Fiber",
-      "url": "https://pmndrs.github.io/examples/spline-glass-shapes",
-      "language": "液态玻璃与光学",
-      "scale": "整页",
-      "scenes": [
-        "教育与展览"
-      ],
-      "reason": "玻璃造型完整，但更像一张没有页面信息的展示图。",
-      "kind": "held",
-      "thumb": "thumbs/r3f-examples__spline-glass-shapes.webp",
-      "thumbMissing": false,
-      "heldNote": "尺度收紧后先按下，想听你判断。不计入已确认的 100 条。"
-    },
-    {
-      "id": "threejs-examples__webgl_loader_gltf_iridescence",
-      "name": "glTF Iridescence",
-      "officialName": "WEBGL Loader glTF Iridescence",
-      "sourceGroup": "基础设施",
-      "sourceSite": "three.js examples",
-      "url": "https://threejs.org/examples/#webgl_loader_gltf_iridescence",
-      "language": "液态玻璃与光学",
-      "scale": "整页",
-      "scenes": [
-        "教育与展览"
-      ],
-      "reason": "灯具静物完整，但更像模型查看器。",
-      "kind": "held",
-      "thumb": "thumbs/threejs-examples__webgl_loader_gltf_iridescence.webp",
-      "thumbMissing": false,
-      "heldNote": "尺度收紧后先按下，想听你判断。不计入已确认的 100 条。"
-    },
-    {
-      "id": "threejs-examples__webgl_loader_gltf_transmission",
-      "name": "glTF Transmission",
-      "officialName": "WEBGL Loader glTF Transmission",
-      "sourceGroup": "基础设施",
-      "sourceSite": "three.js examples",
-      "url": "https://threejs.org/examples/#webgl_loader_gltf_transmission",
-      "language": "液态玻璃与光学",
-      "scale": "整页",
-      "scenes": [
-        "教育与展览"
-      ],
-      "reason": "玻璃容器静物完整，但更像模型查看器。",
-      "kind": "held",
-      "thumb": "thumbs/threejs-examples__webgl_loader_gltf_transmission.webp",
-      "thumbMissing": false,
-      "heldNote": "尺度收紧后先按下，想听你判断。不计入已确认的 100 条。"
-    },
-    {
-      "id": "threejs-examples__webgl_materials_physical_transmission",
-      "name": "Physical Transmission",
-      "officialName": "WEBGL Materials Physical Transmission",
-      "sourceGroup": "基础设施",
-      "sourceSite": "three.js examples",
-      "url": "https://threejs.org/examples/#webgl_materials_physical_transmission",
-      "language": "液态玻璃与光学",
-      "scale": "整页",
-      "scenes": [
-        "教育与展览"
-      ],
-      "reason": "展厅里的玻璃装置完整，但带调试面板，更像官方演示空间。",
-      "kind": "held",
-      "thumb": "thumbs/threejs-examples__webgl_materials_physical_transmission.webp",
-      "thumbMissing": false,
-      "heldNote": "尺度收紧后先按下，想听你判断。不计入已确认的 100 条。"
-    },
-    {
-      "id": "threejs-examples__webgl_shader",
-      "name": "Shader（Monjori）",
-      "officialName": "WEBGL Shader",
-      "sourceGroup": "基础设施",
-      "sourceSite": "three.js examples",
-      "url": "https://threejs.org/examples/#webgl_shader",
-      "language": "生成艺术与程序化图形",
-      "scale": "整页",
-      "scenes": [
-        "教育与展览"
-      ],
-      "reason": "全屏程序化图形完整，但没有页面信息。",
-      "kind": "held",
-      "thumb": "thumbs/threejs-examples__webgl_shader.webp",
-      "thumbMissing": false,
-      "heldNote": "尺度收紧后先按下，想听你判断。不计入已确认的 100 条。"
-    }
-  ]
+  "held": [],
+  "removedUnsuitable": [
+    "cue__components-3d-book-carousel-reading-mode",
+    "cue__components-mosaic-tunnel-scroll-odyssey",
+    "r3f-examples__aquarium",
+    "r3f-examples__caustics",
+    "r3f-examples__inter-epoxy-resin",
+    "r3f-examples__portal-shapes",
+    "r3f-examples__spline-glass-shapes",
+    "react-bits-animations-elastic-mesh",
+    "react-bits-backgrounds-balatro",
+    "react-bits-backgrounds-ferrofluid",
+    "shaders-collection-flowing-ribbon",
+    "shaders-collection-fluid-displacement",
+    "shaders-collection-gemstone",
+    "shaders-collection-heated-shapes",
+    "shaders-collection-studio-glass",
+    "threejs-examples__webgl_loader_gltf_iridescence",
+    "threejs-examples__webgl_loader_gltf_transmission",
+    "threejs-examples__webgl_materials_physical_transmission",
+    "threejs-examples__webgl_shader"
+  ],
+  "mergedSuitableCount": 71
 }

@@ -191,7 +191,7 @@
     host.innerHTML =
       "<h2>先按下，想听你判断</h2>" +
       '<p class="held-lead">' + esc((data.notes && (data.notes.rescreen || data.notes.photon)) || "") +
-      " 这些不和上面已确认的 100 条主列表混在一起计。</p>" +
+      " 这些此前先按下的条目如已有结论，不再显示在本区。</p>" +
       '<div class="grid">' + cards + "</div>";
     host.hidden = false;
     if (window.VFXAnnotate) {
