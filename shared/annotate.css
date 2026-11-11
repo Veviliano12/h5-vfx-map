@@ -42,3 +42,10 @@ a.pane-btn{text-decoration:none;color:inherit;display:inline-block}
 .preview-page .pane-btn.on{background:#111;color:#fff;border-color:#111}
 .preview-page .pane-btn .n{margin-left:6px;font-size:12px;font-weight:500;opacity:.75}
 .preview-page .live-who{padding:8px 24px 0}
+
+.anno-hint {
+  margin: 0 0 8px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #6b7280;
+}

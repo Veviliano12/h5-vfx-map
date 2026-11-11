@@ -17,11 +17,17 @@
     n = (n || "").trim();
     if (n) localStorage.setItem(NAME_KEY, n);
     else localStorage.removeItem(NAME_KEY);
+    return n;
   }
   function needName() {
-    var n = getName();
-    if (n) return n;
     var el = document.getElementById("anno-name");
+    var typed = el ? (el.value || "").trim() : "";
+    var n = getName() || typed;
+    if (n) {
+      setName(n);
+      if (el) { el.value = n; el.classList.remove("need"); }
+      return n;
+    }
     if (el) { el.classList.add("need"); el.focus(); }
     setSync("请先在右上角写署名，再做标记", "err");
     return "";
@@ -174,8 +180,9 @@
         '<button type="button" data-anno="suitable"' + (mine.verdict === "suitable" ? ' class="on-suit"' : "") + ">合适</button>" +
         '<button type="button" data-anno="unsuitable"' + (mine.verdict === "unsuitable" ? ' class="on-unsuit"' : "") + ">不合适</button>" +
       "</div>" +
-      '<textarea data-anno-text placeholder="写一句批注，同事也能看见"></textarea>' +
-      '<button type="button" class="anno-add" data-anno="note">添加批注</button>' +
+      '<p class="anno-hint">点「看过了」会立刻记下，写了字请再点「保存批注」。没有单独的保存按钮。</p>' +
+      '<textarea data-anno-text placeholder="写一句批注，点「保存批注」即可记下"></textarea>' +
+      '<button type="button" class="anno-add" data-anno="note">保存批注</button>' +
       threadHTML(id) +
     "</div>";
   }
@@ -218,22 +225,31 @@
     });
   }
 
+  function refreshPanels(root) {
+    (root || document).querySelectorAll(".anno-panel[data-anno-id]").forEach(function (panel) {
+      var id = panel.getAttribute("data-anno-id");
+      var parent = panel.parentNode;
+      if (id && parent) mountPanel(parent, id, panel.classList.contains("compact"));
+    });
+  }
   function refreshUI() {
     decorate(document);
-    // refresh any open map modal panel if present
+    refreshPanels(document);
   }
 
   function mountHeader() {
     var input = document.getElementById("anno-name");
     if (input) {
       input.value = getName();
-      input.addEventListener("change", function () {
+      function saveName() {
         setName(input.value);
         input.classList.remove("need");
         setSync(getName() ? "署名已记下" : "请先写署名", getName() ? "ok" : "");
-      });
+      }
+      input.addEventListener("change", saveName);
+      input.addEventListener("blur", saveName);
     }
-    if (!cfg.url) setSync("标记会先记在这台电脑，共享同步即将接通", "");
+    if (!cfg.url) setSync("已记在这台电脑，不用另点保存。共享同步尚未接通", "");
     else setSync("批注会同步给同事", "");
   }
 
@@ -242,9 +258,11 @@
     mountHeader();
     pull().then(function () {
       decorate(document);
+      refreshPanels(document);
       if (cfg.url) setSync("已拉取同事的标记", "ok");
     }).catch(function () {
       decorate(document);
+      refreshPanels(document);
       if (cfg.url) setSync("暂时读不到共享批注，先用本机记录", "err");
     });
     if (timer) clearInterval(timer);
@@ -264,10 +282,14 @@
     start: start,
     decorate: decorate,
     mountPanel: mountPanel,
+    refreshPanels: refreshPanels,
     getName: getName,
     item: item,
     summary: summary
   };
+  // Load stored marks immediately, before later page scripts render cards.
+  // Otherwise the first paint of the panels can look empty even when local data exists.
+  loadLocal();
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();
 })(window);
