@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>H5 高阶视效 · 全景地图（活页）</title>
+<style>
+
+
+:root{
+  --bg:#f4f2ed; --ink:#1a1a1a; --muted:#6a675f; --line:#e4e0d6;
+  --card:#fff; --gold:#b45309; --dash:#c9c3b6;
+  --ok:#0d7a4f; --okbg:#e8f6ee; --no:#9a3b32; --nobg:#fbeceb;
+  --wait:#6b5a2c; --waitbg:#f4efe3; --accent:#111; --empty:#f0eee8;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);
+  font:14px/1.55 "SF Pro Text","PingFang SC","Noto Sans SC","Noto Sans CJK SC",system-ui,sans-serif}
+a{color:inherit}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+.shell-top{
+  position:sticky;top:0;z-index:40;
+  background:rgba(244,242,237,.94);
+  backdrop-filter:saturate(1.2) blur(10px);
+  border-bottom:1px solid var(--line);
+  padding:10px 20px 8px;
+}
+.shell-wrap{max-width:1400px;margin:0 auto}
+.shell-top h1{font-size:20px;margin:0 0 2px;font-weight:650;letter-spacing:-.02em}
+.shell-lead{margin:0 0 10px;color:var(--muted);font-size:13px;max-width:980px}
+.shell-lead strong{color:#333;font-weight:600}
+.pane-switch{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pane-btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:7px 14px;font-size:14px;font-weight:600}
+.pane-btn.on{background:#111;color:#fff;border-color:#111}
+.pane-btn .n{margin-left:6px;font-size:12px;font-weight:500;opacity:.75}
+#pane-map{display:block}
+#pane-sources{display:none}
+body.show-sources #pane-map{display:none}
+body.show-sources #pane-sources{display:block}
+body.show-sources #src-toolbar{display:block}
+#src-toolbar{display:none;margin-top:8px}
+.shell-foot{max-width:1400px;margin:0 auto;padding:8px 20px 40px;color:var(--muted);font-size:12px}
+#pane-map{font:13px/1.55 "SF Pro Text","PingFang SC","Noto Sans SC","Noto Sans CJK SC",system-ui,sans-serif}
+
+#pane-map {
+
+
+
+
+.page{padding:28px 32px 48px;max-width:1400px;margin:0 auto}
+.kicker{font-size:11px;letter-spacing:.08em;color:var(--muted);margin:0 0 4px}
+h1{font-size:22px;margin:0 0 6px;letter-spacing:-.03em;font-weight:650}
+.lead{margin:0 0 18px;color:var(--muted);max-width:860px;font-size:13px}
+.map{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.map-head{padding:14px 16px 10px;border-bottom:1px solid var(--line);background:#fbfaf7}
+.map-title{font-weight:650;font-size:14px;margin:0 0 8px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 11px;font-size:12px;color:#333;cursor:pointer}
+.tab:hover{border-color:#111}
+.tab.on{background:#111;color:#fff;border-color:#111}
+.tab.sub{border-style:dashed;color:#666}
+.tab.sub.on{background:#333;border-style:solid;color:#fff}
+.tab .n{margin-left:4px;color:#999;font-size:11px}
+.tab.on .n{color:#ccc}
+.grid{display:grid;grid-template-columns:200px 1fr 1fr;gap:0}
+.th,.rh,.cell{border-top:1px solid var(--line)}
+.th{background:#111;color:#fff;min-height:40px;display:flex;align-items:center;padding:8px 12px;font-size:12px;font-weight:600}
+.rh{padding:12px 14px;background:#faf9f6;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line)}
+.rh b{font-size:13px;font-weight:650}
+.rh span{font-size:11px;color:var(--muted);margin-top:2px}
+.cell{padding:10px;display:flex;gap:8px;flex-wrap:wrap;align-content:flex-start;background:#fff;min-height:118px}
+.cell + .cell{border-left:1px solid var(--line)}
+.card{width:158px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff;cursor:pointer;text-align:left;padding:0;font:inherit;color:inherit}
+.card:hover{border-color:#111;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.card .pic{height:88px;background:#111;position:relative;overflow:hidden}
+.card .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.card .placeholder{height:88px;background:#1a1a1a;color:#bbb;font-size:11px;padding:12px 10px;display:flex;align-items:center;line-height:1.45}
+.card .meta{padding:6px 7px 8px}
+.card .meta b{display:block;font-size:11px;font-weight:650;line-height:1.3}
+.pill{display:inline-block;margin-top:3px;margin-right:3px;font-size:10px;color:#555;background:#f3f1eb;border-radius:999px;padding:0 6px}
+.pill.ref{color:#7c4a12;background:#f6e8d3}
+.pill.bend{color:#1e3a5f;background:#e4eef6}
+.pill.fail{color:#7a2e2e;background:#f5e4e4}
+.empty{width:100%;border:1px dashed var(--dash);border-radius:10px;color:#9a958a;font-size:11px;padding:16px 10px;text-align:center;align-self:stretch;display:flex;align-items:center;justify-content:center;min-height:88px}
+.caption{font-size:12px;color:var(--muted);margin:10px 2px 0;line-height:1.6}
+
+
+
+
+
+
+
+
+.meta{color:#777;font-size:12.5px;margin-bottom:10px}
+
+
+
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+  .th:first-child,.rh{display:none}
+  
+}
+
+}
+
+#m{position:fixed;inset:0;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;z-index:50;padding:24px}
+#m.on{display:flex}
+#m .box{background:#fff;border-radius:12px;max-width:1180px;width:100%;max-height:94vh;overflow:auto;display:grid;grid-template-columns:minmax(0,2.1fr) minmax(280px,1fr)}
+#m .box .imgwrap{background:#111}
+#m .box img{width:100%;display:block}
+#m .box .placeholder-big{min-height:360px;display:flex;align-items:center;justify-content:center;color:#bbb;padding:32px;text-align:center;line-height:1.6;background:#1a1a1a}
+#m .info{padding:18px 20px;font-size:13.5px;line-height:1.6}
+#m .info h2{font-size:18px;margin:0 0 4px;font-weight:650}
+#m .info .meta{color:#777;font-size:12.5px;margin-bottom:10px}
+#m .lab{color:#999;font-size:12px;margin-top:10px}
+#m .info a.go{display:inline-block;margin-top:14px;background:#1a1a1a;color:#fff;text-decoration:none;padding:7px 14px;border-radius:6px}
+#m .x{float:right;cursor:pointer;font-size:22px;color:#999;line-height:1}
+@media(max-width:900px){
+  #m .box{grid-template-columns:1fr}
+}
+
+#src-toolbar, #pane-sources {
+
+
+
+
+a{color:inherit}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+header.top{
+  position:sticky;top:0;z-index:30;
+  background:rgba(246,245,242,.94);
+  backdrop-filter:saturate(1.2) blur(10px);
+  border-bottom:1px solid var(--line);
+  padding:10px 20px 10px;
+}
+.wrap{max-width:1180px;margin:0 auto}
+h1{font-size:20px;margin:0 0 4px;font-weight:650;letter-spacing:-.02em}
+.lead{color:var(--muted);font-size:13px;margin:0 0 12px;max-width:900px}
+.lead strong{color:#333;font-weight:600}
+.tabs{display:flex;gap:8px;margin:0 0 8px}
+.tab{border:1px solid var(--line);background:#fff;border-radius:10px;padding:7px 14px;font-size:14px;font-weight:600}
+.tab.active{background:#111;color:#fff;border-color:#111}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.progress{font-variant-numeric:tabular-nums;font-weight:600;margin-right:4px}
+.pill{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 10px;font-size:12px;color:#333}
+.pill.active{background:#111;color:#fff;border-color:#111}
+.pill.ok{background:var(--okbg);border-color:#cfe8d8;color:var(--ok)}
+.pill.ok.active{background:var(--ok);color:#fff;border-color:var(--ok)}
+.pill.no{background:var(--nobg);border-color:#f0d0cc;color:var(--no)}
+.pill.no.active{background:var(--no);color:#fff;border-color:var(--no)}
+.pill.wait{background:var(--waitbg);border-color:#e6dcbd;color:var(--wait)}
+.pill.wait.active{background:#6b5a2c;color:#fff;border-color:#6b5a2c}
+.actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{border:1px solid #111;background:#111;color:#fff;border-radius:8px;padding:6px 12px;font-size:13px}
+.btn.sec{background:#fff;color:#111}
+.btn:disabled{opacity:.4;cursor:default}
+.search{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px;font-size:13px;min-width:220px}
+.keys{font-size:12px;color:var(--muted);margin:6px 0 0}
+main{padding:12px 20px 80px}
+#view-coverage{display:none}
+body.show-coverage #view-sources{display:none}
+body.show-coverage #view-coverage{display:block}
+body.show-coverage #src-toolbar{display:none}
+
+/* source blocks */
+.blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 14px}
+.bcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;text-align:left;cursor:pointer}
+.bcard:hover{border-color:#cfcabc}
+.bcard.active{border-color:#111;box-shadow:inset 3px 0 0 #111}
+.bcard h3{margin:0 0 2px;font-size:14px;font-weight:650}
+.bcard .n{font-size:22px;font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.bcard p{margin:4px 0 8px;color:var(--muted);font-size:11px;line-height:1.4;min-height:2.6em}
+.bcard .stats{display:flex;flex-wrap:wrap;gap:6px;font-size:11px}
+.bcard .stats span{border-radius:999px;padding:1px 7px;border:1px solid var(--line)}
+.bcard .stats .a{background:var(--okbg);border-color:#cfe8d8;color:var(--ok)}
+.bcard .stats .r{background:var(--nobg);border-color:#f0d0cc;color:var(--no)}
+.bcard .stats .p{background:var(--waitbg);border-color:#e6dcbd;color:var(--wait)}
+.channels{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px;min-height:0}
+.listhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:4px 0 10px}
+.listhead h2{font-size:16px;margin:0}
+.listhead p{margin:0;color:var(--muted);font-size:13px}
+
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  display:grid;grid-template-columns:220px 1fr;gap:0;overflow:hidden;
+  margin:0 0 10px;scroll-margin-top:160px;
+}
+.card.current{outline:2px solid #111;outline-offset:1px}
+.card.v-absorbed{border-color:#b7dcc6;box-shadow:inset 3px 0 0 var(--ok)}
+.card.v-rejected{border-color:#e8c4bf;box-shadow:inset 3px 0 0 var(--no)}
+.shot{background:#161616;min-height:140px;position:relative}
+.shot img{width:100%;height:148px;object-fit:cover;display:block;background:#111}
+.shot .ph{color:#aaa;display:flex;align-items:center;justify-content:center;height:148px;padding:16px;text-align:center;font-size:13px}
+.badge{position:absolute;top:8px;left:8px;font-size:11px;padding:2px 7px;border-radius:999px;background:rgba(0,0,0,.72);color:#fff}
+.badge.gold{left:auto;right:8px;background:#111;color:#f4d38a}
+.badge.inherit{left:auto;right:8px;background:#3b4a6b;color:#fff}
+.body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px}
+.body h3{margin:0;font-size:15px;font-weight:650}
+.body h3 a{text-decoration:none}
+.body h3 a:hover{text-decoration:underline}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;border:1px solid var(--line);border-radius:999px;padding:1px 7px;color:#444;background:#fafafa}
+.excerpt,.detail,.mine{margin:0;font-size:13px;color:#333}
+.mine,.detail{font-size:12px;color:var(--muted)}
+.rowbtns{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;align-items:center}
+.vbtn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 12px;font-size:13px}
+.vbtn.absorbed.sel{background:var(--ok);border-color:var(--ok);color:#fff}
+.vbtn.rejected.sel{background:var(--no);border-color:var(--no);color:#fff}
+.vbtn.pending.sel{background:#6b5a2c;border-color:#6b5a2c;color:#fff}
+.vbtn.absorbed:hover{border-color:var(--ok);color:var(--ok)}
+.vbtn.rejected:hover{border-color:var(--no);color:var(--no)}
+.open{margin-left:auto;text-decoration:none;border:1px solid #111;background:#111;color:#fff;border-radius:8px;padding:6px 12px;font-size:13px}
+.open:hover{background:#333}
+.note{width:100%;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font:inherit;font-size:12px;resize:vertical;min-height:40px;display:none}
+.card.show-note .note{display:block}
+.note-hint{display:none;font-size:12px;color:var(--no);margin:0}
+.card.show-note .note-hint{display:block}
+.linknote{background:none;border:0;padding:0;color:var(--muted);font-size:12px;text-decoration:underline;cursor:pointer}
+
+.pager{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;margin:18px 0 8px}
+.pager .btn.sec.active{background:#111;color:#fff}
+.empty{color:var(--muted);padding:24px 0}
+
+/* coverage */
+.disclaimer{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:16px 0;font-size:13px;color:#333}
+.disclaimer b{font-weight:650}
+.cov-sum{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.matrix-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#fff}
+table.matrix{border-collapse:separate;border-spacing:0;width:100%;min-width:0;font-size:12px}
+.matrix th,.matrix td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:7px 6px;vertical-align:top}
+.matrix th{background:#faf9f6;font-weight:650;text-align:left}
+.matrix th.scene{min-width:96px;max-width:130px}
+.matrix th .sub{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.matrix td.rowname,.matrix thead th:first-child{position:sticky;left:0;background:#faf9f6;font-weight:650;min-width:118px;max-width:132px;z-index:2;box-shadow:2px 0 0 var(--line)}
+.matrix td.rowname{background:#fff}
+.matrix td.cell{cursor:pointer;background:#fff}
+.matrix td.cell:hover{background:#faf9f6}
+.matrix td.cell.empty{background:var(--empty);color:#9a978e;cursor:default}
+.cell .counts{font-variant-numeric:tabular-nums;font-weight:650;margin:0 0 4px}
+.cell .thumbs{display:flex;flex-wrap:nowrap;gap:4px;overflow:hidden}
+.cell .thumbs img{width:46px;height:32px;object-fit:cover;border-radius:4px;background:#111;flex:0 0 auto}
+.cell .thumbs .mini-ph{width:46px;height:32px;border-radius:4px;background:#eee;color:#999;display:flex;align-items:center;justify-content:center;font-size:10px;flex:0 0 auto}
+.cell .counts{white-space:nowrap}
+.legend{color:var(--muted);font-size:12px;margin:8px 0 18px}
+.cov-list{margin-top:8px}
+.cov-list h3{font-size:15px;margin:18px 0 8px}
+.uncat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+
+footer{max-width:1180px;margin:0 auto;padding:8px 20px 40px;color:var(--muted);font-size:12px}
+
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:50;display:flex;align-items:flex-start;justify-content:center;padding:8vh 16px 16px}
+.modal{background:#fff;border-radius:16px;max-width:720px;width:100%;max-height:80vh;overflow:auto;padding:18px 18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.15)}
+.modal h2{margin:0 0 8px;font-size:17px}
+.modal .reason{border-top:1px solid var(--line);padding:8px 0;font-size:13px}
+.modal .reason b{font-weight:650}
+.modal .reason .why{color:#333}
+
+@media (max-width:980px){
+  .blocks{grid-template-columns:repeat(2,1fr)}
+  .card{grid-template-columns:1fr}
+  .shot img,.shot .ph{height:160px}
+  .open{margin-left:0}
+  .search{min-width:0;width:100%}
+}
+
+}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:60;display:flex;align-items:flex-start;justify-content:center;padding:8vh 16px 16px}
+.modal{background:#fff;border-radius:16px;max-width:720px;width:100%;max-height:80vh;overflow:auto;padding:18px 18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.15)}
+.modal h2{margin:0 0 8px;font-size:17px}
+.modal .reason{border-top:1px solid var(--line);padding:8px 0;font-size:13px}
+.modal .reason b{font-weight:650}
+.modal .reason .why{color:#333}
+
+</style>
+<link rel="stylesheet" href="shared/annotate.css">
+</head>
+<body class="show-map">
+<header class="shell-top">
+  <div class="shell-wrap">
+    <h1>H5 高阶视效 · 全景地图</h1>
+    <p class="shell-lead">这是可分享的活页。点<strong>视效地图</strong>看已收录的 53 例；点<strong>待吸收预览</strong>看尚未并入地图的建议吸收；点<strong>来源</strong>看清单里哪些已看过、已吸收或不吸收。页面更新后刷新即可看到最新内容。右上角先写署名，再在卡片上标「看过了」或写批注，同事也能看见。</p>
+    <div class="pane-switch">
+      <button class="pane-btn on" type="button" data-pane="map">视效地图<span class="n" id="map-count"></span></button>
+      <a class="pane-btn" href="preview/">待吸收预览<span class="n">112</span></a>
+      <button class="pane-btn" type="button" data-pane="sources">来源<span class="n" id="src-count"></span></button>
+      <div class="live-who">
+        <label for="anno-name">署名</label>
+        <input id="anno-name" type="text" maxlength="40" placeholder="你的名字" autocomplete="nickname">
+        <span class="live-sync" id="anno-sync"></span>
+      </div>
+    </div>
+    <div id="src-toolbar">
+      <div class="bar">
+        <span class="progress" id="progress">共 0</span>
+        <button class="pill ok" data-filter="absorbed" id="c-ok" type="button">已吸收 0</button>
+        <button class="pill no" data-filter="rejected" id="c-no" type="button">不吸收 0</button>
+        <button class="pill wait" data-filter="pending" id="c-un" type="button">待定 0</button>
+        <button class="pill active" data-filter="all" type="button">全部状态</button>
+        <button class="pill" id="btn-reasons" type="button">浏览不吸收原因</button>
+        <input class="search" id="search" type="search" placeholder="搜索名称、网址、作者或备注" autocomplete="off">
+        <div class="actions">
+          <button class="btn sec" id="btn-reset" type="button">恢复预填判断</button>
+          <button class="btn sec" id="btn-import" type="button">导入 JSON</button>
+          <button class="btn" id="btn-export" type="button">导出 JSON</button>
+        </div>
+      </div>
+      <p class="keys">勾选会保存在这个浏览器里（localStorage，键与文献参考版相同）。键盘：J / K 上下条，1 已吸收，2 不吸收，0 待定，Enter 打开原站。未看过的保持待定。</p>
+    </div>
+  </div>
+</header>
+
+<section id="pane-map">
+  <div class="page">
+    <p class="kicker">在你标过「合适」的 44 个基础上，按同一标准又收了新案例；标「不合适」的 105 个没有放回来</p>
+    <h1>视效地图 · 场景页签</h1>
+    <p class="lead">上面一排是场景（横轴）。表本身只有两列：整页，和按钮、卡片、局部材质这样的组件。点某个场景，只看「这类 H5 会用到哪些视效」。选「全部」时，每张卡片上带着场景标签。B 端产品介绍是落地页下的子标签，不是单独一列。空格子如实留空。</p>
+    <div class="map">
+      <div class="map-head">
+        <p class="map-title">场景（来自官方分类，做成页签）</p>
+        <div class="tabs" id="tabs"></div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+    <p class="caption" id="cap">读法：先选场景（或看全部）→ 再看这一类页面里，哪些视效是整页，哪些是可拿来用的按钮和卡片。点卡片看大图、理由和原站。</p>
+  </div>
+</section>
+
+<section id="pane-sources">
+  <main class="wrap">
+    <section id="view-sources">
+      <div class="blocks" id="blocks"></div>
+      <div class="channels" id="channels"></div>
+      <div class="listhead">
+        <h2 id="list-title">全部来源</h2>
+        <p id="list-sub"></p>
+      </div>
+      <div id="list"></div>
+      <div class="pager" id="pager"></div>
+    </section>
+  </main>
+</section>
+
+<div id="m"><div class="box" id="box"></div></div>
+<footer class="shell-foot">
+  地图仍是已收录的 53 例，待吸收预览尚未并入地图。预填来自 2026-11-11 对 149 条种子的判断。未看过的来源保持待定，不会被当成不吸收。
+</footer>
+<input id="import-file" type="file" accept="application/json,.json" hidden>
+<script src="data/meta.js"></script>
+<script src="data/blocks.js"></script>
+<script src="data/sources-core.js"></script>
+<script src="data/sources-sites.js"></script>
+<script src="data/sources-x.js"></script>
+<script src="data/coverage.js"></script>
+<script src="data/map-cases.js"></script>
+<script src="app-map.js"></script>
+<script src="app-sources.js"></script>
+<script src="shared/config.js"></script>
+<script src="shared/annotate.js"></script>
+<script>
+(function(){
+  function setPane(name){
+    document.body.classList.toggle('show-sources', name==='sources');
+    document.body.classList.toggle('show-map', name!=='sources');
+    document.querySelectorAll('.pane-btn').forEach(b=>b.classList.toggle('on', b.dataset.pane===name));
+    window.scrollTo({top:0});
+  }
+  document.querySelector('.pane-switch').addEventListener('click', e=>{
+    const b=e.target.closest('[data-pane]'); if(!b) return;
+    setPane(b.dataset.pane);
+  });
+  function refreshCounts(){
+    const mc=document.getElementById('map-count');
+    if(mc && window.MAP_DATA) mc.textContent=window.MAP_DATA.cases.length+' 例';
+  }
+  refreshCounts();
+  var q = new URLSearchParams(location.search).get('pane');
+  if (q === 'sources') setPane('sources');
+})();
+</script>
+</body>
+</html>
